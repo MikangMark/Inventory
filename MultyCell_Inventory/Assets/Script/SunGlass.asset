@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0617f65912935804a9a1747af2e46486, type: 3}
-  m_Name: Bow
+  m_Name: SunGlass
   m_EditorClassIdentifier: 
-  width: 3
-  height: 2
-  itemIcon: {fileID: 21300000, guid: a6ec6b5b10cfd0f448217c2afa1c913f, type: 3}
+  type: 6
+  itemName: SunGlass
+  width: 2
+  height: 1
+  invenIcon: {fileID: 21300000, guid: 95d202b439da83c40acac820e6e60347, type: 3}
+  equipIcon: {fileID: 21300000, guid: 94d3a5ba51f1a984c83a0d1c4519b806, type: 3}

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0617f65912935804a9a1747af2e46486, type: 3}
+  m_Name: Razor
+  m_EditorClassIdentifier: 
+  type: 2
+  itemName: Razor
+  width: 2
+  height: 2
+  invenIcon: {fileID: 21300000, guid: 89b34fbfc944f2841b72871ca4cdd9c8, type: 3}
+  equipIcon: {fileID: 21300000, guid: 7cde80cd8814efc4ba0af4e19376655f, type: 3}

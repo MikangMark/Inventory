@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0617f65912935804a9a1747af2e46486, type: 3}
-  m_Name: Potion
+  m_Name: ScavBackPack
   m_EditorClassIdentifier: 
-  width: 1
-  height: 2
-  itemIcon: {fileID: 21300000, guid: d8bfaaf9ea5842c4e9ed95544315f24c, type: 3}
+  type: 5
+  itemName: ScavBackPack
+  width: 4
+  height: 5
+  invenIcon: {fileID: 21300000, guid: 27268a46c139d10469516f831fcc4b78, type: 3}
+  equipIcon: {fileID: 21300000, guid: b570bf2894c4e5d478aa703d7a901984, type: 3}
