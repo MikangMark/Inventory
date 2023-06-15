@@ -40,7 +40,8 @@ public class InventoryItem : MonoBehaviour
     {
         this.itemData = itemData;// 아이템 데이터 설정
         GetComponent<Image>().sprite = itemData.invenIcon;// 이미지 설정
-
+        tag = itemData.type.ToString();
+        name = itemData.itemName;
         Vector2 size = new Vector2();
         size.x = itemData.width * ItemGrid.tileSizeWidth;// 아이템의 너비에 그리드 타일 크기를 곱하여 X 사이즈 설정
         size.y = itemData.height * ItemGrid.tileSizeHeight;// 아이템의 높이에 그리드 타일 크기를 곱하여 Y 사이즈 설정

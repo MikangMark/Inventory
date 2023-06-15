@@ -4,7 +4,22 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Equipment_Window
+  - WEAPON
+  - AROMER
+  - HEADPHONE
+  - HELMET
+  - VEST
+  - BACKPACK
+  - GLASS
+  - VALUABLE
+  - MEDICAL
+  - Eq_WEAPON
+  - Eq_AROMER
+  - Eq_HEADPHONE
+  - Eq_HELMET
+  - Eq_VEST
+  - Eq_BACKPACK
+  - Eq_GLASS
   layers:
   - Default
   - TransparentFX

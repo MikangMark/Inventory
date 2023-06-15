@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 166194744}
   m_Layer: 5
   m_Name: Grid_Glass
-  m_TagString: Equipment_Window
+  m_TagString: Eq_GLASS
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,7 +160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 474, y: 806}
+  m_AnchoredPosition: {x: 474, y: 876}
   m_SizeDelta: {x: 167, y: 167}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &166194744
@@ -211,7 +211,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: a78fa8b1e81223240a53d56cf0300e0a, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 217278782}
   m_Layer: 5
   m_Name: Grid_HeadPhone
-  m_TagString: Equipment_Window
+  m_TagString: Eq_HEADPHONE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,7 +264,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 72, y: 1003.5}
+  m_AnchoredPosition: {x: 72, y: 1073.5}
   m_SizeDelta: {x: 167, y: 167}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &217278782
@@ -315,7 +315,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 84414ba5f159fa2489c910ed397b60dc, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -368,7 +368,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 648.60004, y: 1000.30676}
+  m_AnchoredPosition: {x: 648.60004, y: 1070.3068}
   m_SizeDelta: {x: 86.3984, y: 159.5003}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &230006203
@@ -450,7 +450,7 @@ GameObject:
   - component: {fileID: 253286485}
   m_Layer: 5
   m_Name: Grid_Weapon_1
-  m_TagString: Equipment_Window
+  m_TagString: Eq_WEAPON
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -472,7 +472,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 9, y: 537}
+  m_AnchoredPosition: {x: 9, y: 607}
   m_SizeDelta: {x: 421, y: 169}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &253286485
@@ -523,7 +523,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: d0da44b99b972714c8c2a9be8dda72f6, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 262578201}
   m_Layer: 5
   m_Name: Grid_BackPack
-  m_TagString: Equipment_Window
+  m_TagString: Eq_BACKPACK
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -576,7 +576,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 474, y: 537}
+  m_AnchoredPosition: {x: 474, y: 607}
   m_SizeDelta: {x: 167, y: 167}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &262578201
@@ -627,7 +627,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: ebe0aca9c11351240bc8a3c2cec2140e, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -680,7 +680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 739.2, y: 823.6068}
+  m_AnchoredPosition: {x: 739.2, y: 893.6068}
   m_SizeDelta: {x: 86.3984, y: 86.0472}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &356700678
@@ -784,7 +784,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 648.60004, y: 823.6068}
+  m_AnchoredPosition: {x: 648.60004, y: 893.6068}
   m_SizeDelta: {x: 86.3984, y: 86.0472}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &377442044
@@ -866,7 +866,7 @@ GameObject:
   - component: {fileID: 483141427}
   m_Layer: 5
   m_Name: Grid_Helmet
-  m_TagString: Equipment_Window
+  m_TagString: Eq_HELMET
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -888,7 +888,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 263, y: 1003.5}
+  m_AnchoredPosition: {x: 263, y: 1073.5}
   m_SizeDelta: {x: 167, y: 167}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &483141427
@@ -939,7 +939,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 2f769df93a0fd814b8f131fb97cc364f, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -970,7 +970,7 @@ GameObject:
   - component: {fileID: 510999969}
   m_Layer: 5
   m_Name: Grid_BackPackSlot
-  m_TagString: Equipment_Window
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -992,7 +992,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 643.1, y: 537}
+  m_AnchoredPosition: {x: 643.1, y: 607}
   m_SizeDelta: {x: 339.1917, y: 502.9175}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &510999969
@@ -1096,7 +1096,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 927.10004, y: 823.6068}
+  m_AnchoredPosition: {x: 927.1001, y: 893.6068}
   m_SizeDelta: {x: 86.3984, y: 86.0472}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &840164548
@@ -1200,7 +1200,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 927.10004, y: 1000.30676}
+  m_AnchoredPosition: {x: 927.1001, y: 1070.3068}
   m_SizeDelta: {x: 86.3984, y: 159.5003}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &996642053
@@ -1299,6 +1299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c306c96fe686a9f478cefa6946b6c34c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chest: {fileID: 5334507071577241277, guid: 6c46495634645fa4bba3d65eac68002c, type: 3}
   items:
   - {fileID: 11400000, guid: a533a4607f0cfad488c13f7be0c86a06, type: 2}
   - {fileID: 11400000, guid: 041c3dad0c52c774bb17abc0761ee9ec, type: 2}
@@ -1371,7 +1372,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080062702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 70, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1428,7 +1429,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 739.2, y: 733.0067}
+  m_AnchoredPosition: {x: 739.2, y: 803.00665}
   m_SizeDelta: {x: 86.3984, y: 86.0472}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1152782591
@@ -1532,7 +1533,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 831.7, y: 733.0067}
+  m_AnchoredPosition: {x: 831.7, y: 803.00665}
   m_SizeDelta: {x: 86.3984, y: 86.0472}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1242774149
@@ -1636,7 +1637,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 648.60004, y: 733.00684}
+  m_AnchoredPosition: {x: 648.60004, y: 803.0069}
   m_SizeDelta: {x: 86.3984, y: 159.5003}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1270419704
@@ -1862,7 +1863,7 @@ GameObject:
   - component: {fileID: 1410679768}
   m_Layer: 5
   m_Name: Grid_Armor
-  m_TagString: Equipment_Window
+  m_TagString: Eq_AROMER
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1884,7 +1885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 263, y: 806}
+  m_AnchoredPosition: {x: 263, y: 876}
   m_SizeDelta: {x: 167, y: 167}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1410679768
@@ -1935,7 +1936,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: de76c5248607a5a4dbc6ce60a727da2b, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1988,7 +1989,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 831.7, y: 823.6068}
+  m_AnchoredPosition: {x: 831.7, y: 893.6068}
   m_SizeDelta: {x: 86.3984, y: 86.0472}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1627854627
@@ -2092,7 +2093,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 739.2, y: 1000.30676}
+  m_AnchoredPosition: {x: 739.2, y: 1070.3068}
   m_SizeDelta: {x: 86.3984, y: 159.5003}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1632700409
@@ -2196,7 +2197,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 831.6999, y: 1000.30676}
+  m_AnchoredPosition: {x: 831.6999, y: 1070.3068}
   m_SizeDelta: {x: 86.3984, y: 159.5003}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1652566867
@@ -2278,7 +2279,7 @@ GameObject:
   - component: {fileID: 1920330577}
   m_Layer: 5
   m_Name: Grid_Weapon_2
-  m_TagString: Equipment_Window
+  m_TagString: Eq_WEAPON
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2300,7 +2301,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 9, y: 334}
+  m_AnchoredPosition: {x: 9, y: 404}
   m_SizeDelta: {x: 421, y: 169}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1920330577
@@ -2351,7 +2352,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: d8e12d5edbb00ed47b7388143a435ed1, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2420,7 +2421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridSizeWidth: 10
-  gridSizeHeight: 12
+  gridSizeHeight: 13
 --- !u!114 &1958216690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2609,7 +2610,7 @@ GameObject:
   - component: {fileID: 2058523306}
   m_Layer: 5
   m_Name: Grid_Vest
-  m_TagString: Equipment_Window
+  m_TagString: Eq_VEST
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2631,7 +2632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 474, y: 1003.5}
+  m_AnchoredPosition: {x: 474, y: 1073.5}
   m_SizeDelta: {x: 167, y: 167}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2058523306
@@ -2682,7 +2683,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 1e30be9478956004aa5fe827c2b65453, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2735,7 +2736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 927.10004, y: 733.0067}
+  m_AnchoredPosition: {x: 927.1001, y: 803.00665}
   m_SizeDelta: {x: 86.3984, y: 159.5003}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2137052799

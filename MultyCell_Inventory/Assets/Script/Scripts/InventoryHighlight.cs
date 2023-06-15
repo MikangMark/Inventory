@@ -41,5 +41,6 @@ public class InventoryHighlight : MonoBehaviour
     {
         Vector2 pos = targetGrid.CalculatePositionOnGrid(targetItem, posX, posY);// 타겟 그리드에서 지정된 위치(posX, posY)에 대한 타겟 아이템의 위치를 계산합니다.
         highlighter.localPosition = pos;// 강조 효과의 로컬 위치를 설정합니다.
+        highlighter.SetAsFirstSibling();
     }
 }

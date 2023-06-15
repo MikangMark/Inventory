@@ -7,6 +7,9 @@ public class InventoryController : MonoBehaviour
 {
     [HideInInspector]
     private ItemGrid selectedItemGrid;// 현재 선택된 아이템 그리드
+    public GameObject chest;
+    ItemGrid vestGrid;
+    ItemGrid backPackGrid;
     public ItemGrid SelectedItemGrid
     {
         get => selectedItemGrid;
@@ -62,7 +65,13 @@ public class InventoryController : MonoBehaviour
         {
             LeftMouseButtonPress();// 왼쪽 마우스 버튼 클릭 처리
         }
+        if (Input.GetMouseButtonDown(1))
+        {
+            RightMouseButtonPress();
+        }
     }
+
+    
 
     private void RotateItem()
     {
@@ -156,6 +165,24 @@ public class InventoryController : MonoBehaviour
             PlaceItem(tileGridPosition);// 아이템을 놓음
         }
     }
+    private void RightMouseButtonPress()
+    {
+        if(selectedItem.itemData.type == ItemType.BACKPACK)
+        {
+            backPackGrid = Instantiate(chest).GetComponent<ItemGrid>();
+            backPackGrid.GetComponent<RectTransform>().localPosition = Input.mousePosition;
+        }
+        if (selectedItem.itemData.type == ItemType.VEST)
+        {
+            vestGrid = Instantiate(chest).GetComponent<ItemGrid>();
+            vestGrid.GetComponent<RectTransform>().localPosition = Input.mousePosition;
+        }
+        
+    }
+    void OpenBackpack()
+    {
+
+    }
 
     private Vector2Int GetTileGridPosition()
     {
@@ -169,19 +196,18 @@ public class InventoryController : MonoBehaviour
         return selectedItemGrid.GetTileGridPosition(position);// 마우스 위치에 해당하는 그리드 위치 계산
     }
 
-    private void PlaceItem(Vector2Int tileGridPosition)
+    private void PlaceItem(Vector2Int tileGridPosition)//들고있는아이템을 놓는메소드
     {
-        bool complete = selectedItemGrid.PlaceItem(selectedItem, tileGridPosition.x, tileGridPosition.y, ref overlapItem);// 아이템을 그리드에 놓음
+        bool complete = selectedItemGrid.PlaceItem(selectedItem, tileGridPosition.x, tileGridPosition.y, ref overlapItem);// 아이템을 그리드에 놓을지 판단하는메소드
         if (complete)
         {
             selectedItem = null;
-            if(overlapItem != null)
+            if(overlapItem != null) //놓을곳에 아이템이 존재할경우 들고있는아이템이랑 그리드에있는아이템이랑 바꿈
             {
                 selectedItem = overlapItem;
                 overlapItem = null;
                 rectTransform = selectedItem.GetComponent<RectTransform>();
                 rectTransform.SetAsLastSibling();
-                Debug.Log("aa");
             }
         }
         
@@ -190,7 +216,12 @@ public class InventoryController : MonoBehaviour
     private void PickUpItem(Vector2Int tileGridPosition)
     {
         selectedItem = selectedItemGrid.PickUpItem(tileGridPosition.x, tileGridPosition.y);// 아이템을 집어올림
+        if (selectedItem == null)
+        {
+            return;
+        }
         selectedItem.transform.SetAsLastSibling();
+        selectedItem.transform.parent.SetAsLastSibling();
         if (selectedItem != null)
         {
             rectTransform = selectedItem.GetComponent<RectTransform>();

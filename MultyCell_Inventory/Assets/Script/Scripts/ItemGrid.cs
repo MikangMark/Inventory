@@ -23,6 +23,11 @@ public class ItemGrid : MonoBehaviour
         Init(gridSizeWidth, gridSizeHeight);
     }
 
+    private void Update()
+    {
+        //UpdateGridSize(gridSizeWidth, gridSizeHeight);
+    }
+
     public InventoryItem PickUpItem(int x, int y)// 아이템을 선택하여 인벤토리에서 제거하고 반환하는 메서드
     {
         InventoryItem toReturn = inventoryItemSlot[x, y];
@@ -51,6 +56,11 @@ public class ItemGrid : MonoBehaviour
     private void Init(int width, int height)// 그리드를 초기화하는 메서드
     {
         inventoryItemSlot = new InventoryItem[width, height];// 인벤토리 아이템 슬롯 배열 초기화
+        Vector2 size = new Vector2(width * tileSizeWidth, height * tileSizeHeight);
+        rectTransform.sizeDelta = size;
+    }
+    void UpdateGridSize(int width, int height)
+    {
         Vector2 size = new Vector2(width * tileSizeWidth, height * tileSizeHeight);
         rectTransform.sizeDelta = size;
     }
@@ -107,7 +117,19 @@ public class ItemGrid : MonoBehaviour
         {
             CleanGridReference(overlapItem);
         }
-
+        if (inventoryItem.itemData.type == ItemType.AROMER ||
+            inventoryItem.itemData.type == ItemType.BACKPACK ||
+            inventoryItem.itemData.type == ItemType.GLASS ||
+            inventoryItem.itemData.type == ItemType.HEADPHONE ||
+            inventoryItem.itemData.type == ItemType.HELMET ||
+            inventoryItem.itemData.type == ItemType.VEST ||
+            inventoryItem.itemData.type == ItemType.WEAPON)
+        {
+            if(tag != "Untagged" && tag != "Eq_" + inventoryItem.itemData.type.ToString())//장비군에맟는 아이템인지 검사하는 코드
+            {
+                return false;
+            }
+        }
         PlaceItem(inventoryItem, posX, posY);
 
         return true;
