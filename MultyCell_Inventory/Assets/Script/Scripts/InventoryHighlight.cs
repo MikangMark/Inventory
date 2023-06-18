@@ -10,6 +10,7 @@ public class InventoryHighlight : MonoBehaviour
     public void Show(bool b)
     {
         highlighter.gameObject.SetActive(b);// 강조 효과를 활성화 또는 비활성화하여 보여줍니다.
+        highlighter.SetAsLastSibling();
     }
 
     public void SetSize(InventoryItem targetItem)

@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class InventoryItem : MonoBehaviour
 {
     public ItemData itemData;// 아이템 데이터를 저장하는 변수
-
+    public bool targetOn = false;
     public int HEIGHT// 아이템의 높이를 반환하는 속성
     {
         get 
@@ -54,4 +55,5 @@ public class InventoryItem : MonoBehaviour
         RectTransform rectTransform = GetComponent<RectTransform>();// RectTransform 컴포넌트 가져오기
         rectTransform.rotation = Quaternion.Euler(0, 0, rotated == true ? 90f : 0f);// 회전 값을 사용하여 게임 오브젝트 회전 설정
     }
+
 }

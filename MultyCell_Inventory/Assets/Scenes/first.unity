@@ -123,6 +123,42 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &67340120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 67340121}
+  m_Layer: 5
+  m_Name: PickUpZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &67340121
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67340120}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2024204604}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 4, y: 3}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &166194742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,8 +1347,28 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8c49f9421b803454da9067bade9bd659, type: 2}
   - {fileID: 11400000, guid: 11bf00b3fe82f1e45991de303e863804, type: 2}
   - {fileID: 11400000, guid: 14d05e1711c419641afdcdad8492962d, type: 2}
+  eq_items:
+  - {fileID: 11400000, guid: 02178137be8d0ab4399cc32e09d272af, type: 2}
+  - {fileID: 11400000, guid: 4318c2183c71efd4f971a5293e621395, type: 2}
+  - {fileID: 11400000, guid: 869c9d76ea641b24da72ee29ed607823, type: 2}
+  - {fileID: 11400000, guid: 0864944759c0cef49bf245b55ae0b72e, type: 2}
+  - {fileID: 11400000, guid: b231a01f2cc1e8c4b9ce6ae8c6b35167, type: 2}
+  - {fileID: 11400000, guid: 9d3cb527014c31c4c809307e3bb8f745, type: 2}
+  - {fileID: 11400000, guid: e4335188cc807d54ab0a39053fadbb7a, type: 2}
+  - {fileID: 11400000, guid: 6b07d64387b19c14c9e7a0560fa9ce94, type: 2}
   itemPrefab: {fileID: 1290569142410953438, guid: b94cfc93f8fb453498ff67992c395ccf, type: 3}
   canvasTransform: {fileID: 2024204604}
+  eq_Objects:
+  - {fileID: 217278780}
+  - {fileID: 483141425}
+  - {fileID: 262578199}
+  - {fileID: 1410679766}
+  - {fileID: 166194742}
+  - {fileID: 2058523304}
+  - {fileID: 253286483}
+  - {fileID: 1920330575}
+  pickUpZone: {fileID: 67340120}
+  itemTag: []
 --- !u!81 &1080062704
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2587,6 +2643,7 @@ RectTransform:
   - {fileID: 2137052798}
   - {fileID: 253286484}
   - {fileID: 1920330576}
+  - {fileID: 67340121}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

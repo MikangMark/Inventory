@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0617f65912935804a9a1747af2e46486, type: 3}
-  m_Name: Razor
+  m_Name: Eq_ScavBackPack
   m_EditorClassIdentifier: 
-  type: 2
-  itemName: Razor
+  type: 5
+  itemName: Eq_ScavBackPack
   width: 2
   height: 2
-  invenIcon: {fileID: 21300000, guid: 89b34fbfc944f2841b72871ca4cdd9c8, type: 3}
-  equipIcon: {fileID: 21300000, guid: 7cde80cd8814efc4ba0af4e19376655f, type: 3}
+  invenIcon: {fileID: 21300000, guid: b570bf2894c4e5d478aa703d7a901984, type: 3}
   save_width: 2
   save_height: 2

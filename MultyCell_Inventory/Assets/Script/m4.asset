@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: m4
   m_EditorClassIdentifier: 
   type: 0
-  itemName: M4
+  itemName: m4
   width: 5
   height: 2
   invenIcon: {fileID: 21300000, guid: 67edd3d8e1b164a4b91aa6c755a98b4b, type: 3}
-  equipIcon: {fileID: 21300000, guid: 75fa58a4f21ad924e902c6af15318802, type: 3}
+  save_width: 5
+  save_height: 2

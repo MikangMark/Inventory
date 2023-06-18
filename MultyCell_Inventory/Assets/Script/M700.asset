@@ -18,3 +18,5 @@ MonoBehaviour:
   height: 1
   invenIcon: {fileID: 21300000, guid: ec3725e2b0e539441a7a3ec7d551930f, type: 3}
   equipIcon: {fileID: 21300000, guid: b738f568c68ee8446af07be3d5d6dbe6, type: 3}
+  save_width: 5
+  save_height: 1

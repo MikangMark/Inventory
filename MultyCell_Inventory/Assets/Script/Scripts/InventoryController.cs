@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class InventoryController : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class InventoryController : MonoBehaviour
     public ItemGrid SelectedItemGrid
     {
         get => selectedItemGrid;
-        set {
+        set
+        {
             selectedItemGrid = value;
             inventoryHighlight.SetParent(value);// 선택된 아이템 그리드에 따라 강조 효과의 부모를 설정합니다.
         }
@@ -24,15 +26,40 @@ public class InventoryController : MonoBehaviour
 
     [SerializeField]
     List<ItemData> items;// 아이템 데이터 목록
-    [SerializeField] 
+    [SerializeField]
+    List<ItemData> eq_items;// 장비아이템 데이터 목록
+    [SerializeField]
     GameObject itemPrefab;// 아이템 프리팹
-    [SerializeField] 
+    [SerializeField]
     Transform canvasTransform;// 캔버스의 Transform
 
     InventoryHighlight inventoryHighlight;// 인벤토리 강조 효과
+
+    [SerializeField]
+    List<GameObject> eq_Objects;
+
+    [SerializeField]
+    GameObject pickUpZone;
+
+    public List<string> itemTag;
     private void Awake()
     {
         inventoryHighlight = GetComponent<InventoryHighlight>();// 인벤토리 강조 효과 컴포넌트를 가져옵니다.
+    }
+    private void Start()
+    {
+        itemTag = new List<string>();
+        Array enumValues = Enum.GetValues(typeof(ItemType));
+        for (int i = 0; i < enumValues.Length; i++)
+        {
+            ItemType value = (ItemType)enumValues.GetValue(i);
+            itemTag.Add(value.ToString());
+        }
+        for (int i = 0; i < items.Count; i++)
+        {
+            items[i].height = items[i].save_height;
+            items[i].width = items[i].save_width;
+        }
     }
     private void Update()
     {
@@ -44,7 +71,7 @@ public class InventoryController : MonoBehaviour
             {
                 CreateRandomItem();// 랜덤 아이템 생성
             }
-            
+
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -69,13 +96,91 @@ public class InventoryController : MonoBehaviour
         {
             RightMouseButtonPress();
         }
+        for (int i = 0; i < eq_Objects.Count; i++)
+        {
+            int count = eq_Objects[i].transform.childCount;
+            if (count > 0)
+            {
+                if (eq_Objects[i].transform.GetChild(0).gameObject.name.Equals("Highlighter"))
+                {
+                    count--;
+                }
+                if (eq_Objects[i].transform.GetChild(0) != null)
+                {
+                    for (int j = 0; j < eq_items.Count; j++)
+                    {
+                        if (eq_Objects[i].transform.GetChild(0).gameObject.name != "Highlighter")
+                        {
+                            if (eq_Objects[i].transform.GetChild(0).GetComponent<InventoryItem>().itemData.itemName == eq_items[j].itemName.Substring(3, eq_items[j].itemName.Length - 3))
+                            {
+                                eq_Objects[i].transform.GetChild(0).GetComponent<InventoryItem>().itemData = eq_items[j];
+                                eq_Objects[i].transform.GetChild(0).GetComponent<InventoryItem>().Set(eq_items[j]);
+                                break;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+        if (selectedItem != null)
+        {
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
+                pointerEventData.position = Input.mousePosition;
+                List<RaycastResult> results = new List<RaycastResult>();
+                EventSystem.current.RaycastAll(pointerEventData, results);
+
+                foreach (RaycastResult result in results)
+                {
+                    GameObject hitObject = result.gameObject;
+                    if (selectedItem.tag.Equals("WEAPON"))
+                    {
+                        if (hitObject.tag.Substring(0, 4) == "Eq_W")
+                        {
+
+                            selectedItem.itemData.width = 5;
+                            selectedItem.itemData.height = 2;
+                            selectedItem.Set(selectedItem.itemData);
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        if (hitObject.tag.Substring(0, 2) == "Eq")
+                        {
+                            if (!selectedItem.tag.Equals("WEAPON"))
+                            {
+                                selectedItem.itemData.width = 2;
+                                selectedItem.itemData.height = 2;
+                                selectedItem.Set(selectedItem.itemData);
+                            }
+                            break;
+                        }
+                    }
+                    if (hitObject.tag.Equals("Untagged"))
+                    {
+                        selectedItem.itemData.width = selectedItem.itemData.save_width;
+                        selectedItem.itemData.height = selectedItem.itemData.save_height;
+                        selectedItem.Set(selectedItem.itemData);
+                    }
+                }
+                if (results.Count < 1)
+                {
+                    selectedItem.itemData.width = selectedItem.itemData.save_width;
+                    selectedItem.itemData.height = selectedItem.itemData.save_height;
+                    selectedItem.Set(selectedItem.itemData);
+                }
+            }
+        }
     }
 
-    
+
 
     private void RotateItem()
     {
-        if(selectedItem == null)
+        if (selectedItem == null)
         {
             return;
         }
@@ -84,7 +189,7 @@ public class InventoryController : MonoBehaviour
 
     private void InsertRandomItem()
     {
-        if(selectedItemGrid == null)
+        if (selectedItemGrid == null)
         {
             return;
         }
@@ -125,18 +230,21 @@ public class InventoryController : MonoBehaviour
                 inventoryHighlight.Show(true);// 강조 효과 보여주기
                 inventoryHighlight.SetSize(itemToHighlight);// 강조 효과 크기 설정
                 inventoryHighlight.SetPosition(selectedItemGrid, itemToHighlight);// 강조 효과 위치 설정
+
             }
             else
             {
                 inventoryHighlight.Show(false);// 강조 효과 숨기기
+
             }
-            
+
         }
         else
         {
             inventoryHighlight.Show(selectedItemGrid.BoundryCheck(positionOnGrid.x, positionOnGrid.y, selectedItem.WIDTH, selectedItem.HEIGHT));// 강조 효과 보여주기 여부 설정
             inventoryHighlight.SetSize(selectedItem);// 강조 효과 크기 설정
             inventoryHighlight.SetPosition(selectedItemGrid, selectedItem, positionOnGrid.x, positionOnGrid.y);// 강조 효과 위치 설정
+
         }
     }
 
@@ -167,7 +275,7 @@ public class InventoryController : MonoBehaviour
     }
     private void RightMouseButtonPress()
     {
-        if(selectedItem.itemData.type == ItemType.BACKPACK)
+        if (selectedItem.itemData.type == ItemType.BACKPACK)
         {
             backPackGrid = Instantiate(chest).GetComponent<ItemGrid>();
             backPackGrid.GetComponent<RectTransform>().localPosition = Input.mousePosition;
@@ -177,7 +285,7 @@ public class InventoryController : MonoBehaviour
             vestGrid = Instantiate(chest).GetComponent<ItemGrid>();
             vestGrid.GetComponent<RectTransform>().localPosition = Input.mousePosition;
         }
-        
+
     }
     void OpenBackpack()
     {
@@ -201,16 +309,39 @@ public class InventoryController : MonoBehaviour
         bool complete = selectedItemGrid.PlaceItem(selectedItem, tileGridPosition.x, tileGridPosition.y, ref overlapItem);// 아이템을 그리드에 놓을지 판단하는메소드
         if (complete)
         {
+            if (selectedItem.itemData.itemName.Substring(0, 2) == "Eq")
+            {
+                for (int i = 0; i < items.Count; i++)
+                {
+                    if (items[i].itemName == selectedItem.itemData.itemName)
+                    {
+                        selectedItem.itemData = items[i];
+                        selectedItem.Set(items[i]);
+                        break;
+                    }
+                }
+            }
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (selectedItem.itemData.itemName == items[i].itemName)
+                {
+                    items[i].height = items[i].save_height;
+                    items[i].width = items[i].save_width;
+                    selectedItem.itemData = items[i];
+                    selectedItem.Set(items[i]);
+                }
+            }
             selectedItem = null;
-            if(overlapItem != null) //놓을곳에 아이템이 존재할경우 들고있는아이템이랑 그리드에있는아이템이랑 바꿈
+            if (overlapItem != null) //놓을곳에 아이템이 존재할경우 들고있는아이템이랑 그리드에있는아이템이랑 바꿈
             {
                 selectedItem = overlapItem;
                 overlapItem = null;
                 rectTransform = selectedItem.GetComponent<RectTransform>();
                 rectTransform.SetAsLastSibling();
             }
+
         }
-        
+
     }
 
     private void PickUpItem(Vector2Int tileGridPosition)
@@ -220,6 +351,19 @@ public class InventoryController : MonoBehaviour
         {
             return;
         }
+        if(selectedItem.itemData.itemName.Substring(0,2) == "Eq")
+        {
+            for(int i = 0; i < items.Count; i++)
+            {
+                if (items[i].itemName == selectedItem.itemData.itemName.Substring(3, selectedItem.itemData.itemName.Length-3))
+                {
+                    selectedItem.itemData = items[i];
+                    selectedItem.Set(items[i]);
+                    break;
+                }
+            }
+        }
+        selectedItem.transform.parent = pickUpZone.transform;
         selectedItem.transform.SetAsLastSibling();
         selectedItem.transform.parent.SetAsLastSibling();
         if (selectedItem != null)
