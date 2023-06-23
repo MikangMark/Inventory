@@ -94,14 +94,14 @@ public class InventoryController : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(1))
         {
-            RightMouseButtonPress();
+            //RightMouseButtonPress();//우클릭시 가방열리는것구현하다가 시간없어서 취소...
         }
         for (int i = 0; i < eq_Objects.Count; i++)
         {
             int count = eq_Objects[i].transform.childCount;
             if (count > 0)
             {
-                if (eq_Objects[i].transform.GetChild(0).gameObject.name.Equals("Highlighter"))
+                if (eq_Objects[i].transform.GetChild(0).gameObject.name.Equals("Highlighter"))//아이템에 커서를 올리면 최상단에 하이라이트가있기떄문에 하나빼주기
                 {
                     count--;
                 }
@@ -247,7 +247,15 @@ public class InventoryController : MonoBehaviour
 
         }
     }
-
+    public void CreateItem(int itemId)//아이템번호로 그아이템을 생성
+    {
+        InventoryItem inventoryItem = Instantiate(itemPrefab).GetComponent<InventoryItem>();// 아이템 프리팹을 인스턴스화하여 아이템 객체 가져오기
+        selectedItem = inventoryItem;
+        rectTransform = inventoryItem.GetComponent<RectTransform>();
+        rectTransform.SetParent(canvasTransform);// 아이템을 캔버스의 자식으로 설정
+        rectTransform.SetAsLastSibling();// 아이템을 맨 위로 올리기
+        inventoryItem.Set(items[itemId]);// 선택된 아이템 데이터로 아이템 설정
+    }
     private void CreateRandomItem()
     {
         InventoryItem inventoryItem = Instantiate(itemPrefab).GetComponent<InventoryItem>();// 아이템 프리팹을 인스턴스화하여 아이템 객체 가져오기
@@ -273,25 +281,20 @@ public class InventoryController : MonoBehaviour
             PlaceItem(tileGridPosition);// 아이템을 놓음
         }
     }
-    private void RightMouseButtonPress()
+    private void RightMouseButtonPress()//우클릭시 가방과 전투조끼 그리드 나오게 할려했으니 시간부족으로 취소
     {
         if (selectedItem.itemData.type == ItemType.BACKPACK)
         {
-            backPackGrid = Instantiate(chest).GetComponent<ItemGrid>();
+            backPackGrid = Instantiate(backPackGrid, canvasTransform).GetComponent<ItemGrid>();
             backPackGrid.GetComponent<RectTransform>().localPosition = Input.mousePosition;
         }
         if (selectedItem.itemData.type == ItemType.VEST)
         {
-            vestGrid = Instantiate(chest).GetComponent<ItemGrid>();
+            vestGrid = Instantiate(chest, canvasTransform).GetComponent<ItemGrid>();
             vestGrid.GetComponent<RectTransform>().localPosition = Input.mousePosition;
         }
 
     }
-    void OpenBackpack()
-    {
-
-    }
-
     private Vector2Int GetTileGridPosition()
     {
         Vector2 position = Input.mousePosition;
@@ -309,7 +312,7 @@ public class InventoryController : MonoBehaviour
         bool complete = selectedItemGrid.PlaceItem(selectedItem, tileGridPosition.x, tileGridPosition.y, ref overlapItem);// 아이템을 그리드에 놓을지 판단하는메소드
         if (complete)
         {
-            if (selectedItem.itemData.itemName.Substring(0, 2) == "Eq")
+            if (selectedItem.itemData.itemName.Substring(0, 2) == "Eq")//들고있는 아이템이 장비관련일경우
             {
                 for (int i = 0; i < items.Count; i++)
                 {
@@ -321,7 +324,7 @@ public class InventoryController : MonoBehaviour
                     }
                 }
             }
-            for (int i = 0; i < items.Count; i++)
+            for (int i = 0; i < items.Count; i++)//모든아이템
             {
                 if (selectedItem.itemData.itemName == items[i].itemName)
                 {
@@ -351,7 +354,7 @@ public class InventoryController : MonoBehaviour
         {
             return;
         }
-        if(selectedItem.itemData.itemName.Substring(0,2) == "Eq")
+        if(selectedItem.itemData.itemName.Substring(0,2) == "Eq")//들고있는아이템이 장비관련아이템일경우
         {
             for(int i = 0; i < items.Count; i++)
             {
